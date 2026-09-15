@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VinFast Đại Lý Chính Hãng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --red: #C8102E;
+      --red-dark: #9A0B21;
+      --red-light: #FF1F44;
+      --dark: #0D0D0D;
+      --dark2: #161616;
+      --dark3: #1E1E1E;
+      --gray: #888;
+      --gray2: #555;
+      --white: #FAFAFA;
+      --gold: #C9A84C;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 70px;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 16, 46, 0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav-logo-img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .nav-logo-badge {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .nav-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(250, 250, 250, 0.6);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red-light);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: #fff;
+      padding: 10px 24px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--red-light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg, rgba(13, 13, 13, 0.97) 0%, rgba(13, 13, 13, 0.75) 50%, rgba(13, 13, 13, 0.3) 100%),
+        url('images/Back.jpg') center/cover;
+    }
+
+    /* Red diagonal stripe */
+    .hero-stripe {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--red);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px;
+      max-width: 700px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 9vw, 120px);
+      line-height: 0.9;
+      color: var(--white);
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    .hero-title span {
+      color: var(--red-light);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(250, 250, 250, 0.55);
+      max-width: 480px;
+      margin-bottom: 50px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      padding: 16px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(250, 250, 250, 0.25);
+      color: var(--white);
+      padding: 16px 36px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--red);
+      color: var(--red-light);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(250, 250, 250, 0.35);
+      font-weight: 400;
+    }
+
+    .hero-scroll::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(250, 250, 250, 0.25);
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--dark2);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 36px 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 16px;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      color: var(--red-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(250, 250, 250, 0.4);
+      font-weight: 400;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section {
+      padding: 100px 60px;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 5vw, 64px);
+      letter-spacing: 2px;
+      line-height: 1;
+      color: var(--white);
+    }
+
+    .section-line {
+      width: 60px;
+      height: 2px;
+      background: var(--red);
+      margin-top: 20px;
+    }
+
+    /* ── CARS GRID ── */
+    #xe {
+      background: var(--dark);
+    }
+
+    .car-filter {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(250, 250, 250, 0.5);
+      padding: 8px 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2px;
+    }
+
+    .car-card {
+      background: var(--dark2);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .car-card:hover {
+      transform: scale(1.01);
+      z-index: 2;
+    }
+
+    .car-card.hidden {
+      display: none;
+    }
+
+    .card-highlight {
+      outline: 2px solid var(--gold);
+      outline-offset: -2px;
+    }
+
+    .car-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+      filter: brightness(0.85) saturate(1.1);
+    }
+
+    .car-card:hover .car-img {
+      transform: scale(1.04);
+    }
+
+    .car-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--red);
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      font-weight: 600;
+    }
+
+    .badge-hot {
+      background: #b35000;
+    }
+
+    .badge-highlight {
+      background: #6b5c00;
+      color: #ffe066;
+    }
+
+    .car-info {
+      padding: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .car-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .car-type {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .car-variants {
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .variant-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+    }
+
+    .variant-row:last-child {
+      border-bottom: none;
+    }
+
+    .vname {
+      color: rgba(250, 250, 250, 0.5);
+      letter-spacing: 0.5px;
+    }
+
+    .vprice {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .car-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 16px;
+    }
+
+    .price-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .price-from {
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 1px;
+    }
+
+    .car-btn {
+      background: transparent;
+      border: 1px solid rgba(200, 16, 46, 0.4);
+      color: var(--red-light);
+      padding: 8px 18px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .car-btn:hover {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+
+    /* ── WHY US ── */
+    #lido {
+      background: var(--dark3);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+    }
+
+    .feature-card {
+      padding: 40px;
+      background: var(--dark2);
+      border-left: 3px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .feature-card:hover {
+      border-left-color: var(--red);
+      transform: translateX(4px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(200, 16, 46, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--red-light);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .feature-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(250, 250, 250, 0.45);
+      font-weight: 300;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #danh-gia {
+      background: var(--dark);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .review-card {
+      background: var(--dark2);
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .review-quote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      color: var(--red);
+      line-height: 0.7;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(250, 250, 250, 0.6);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .review-name {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .review-loc {
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    /* ── CONTACT ── */
+    #lien-he {
+      background:
+        linear-gradient(to bottom, var(--dark3), var(--dark));
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-info {}
+
+    .contact-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(200, 16, 46, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--red-light);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-text p {
+      font-size: 13px;
+      color: var(--gray);
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+
+    .contact-text span {
+      font-size: 15px;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      padding: 13px 16px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-select {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: var(--dark2);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-submit {
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover {
+      background: var(--red-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 50px 60px 30px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand {}
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .footer-logo span {
+      color: var(--red);
+    }
+
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(250, 250, 250, 0.35);
+      max-width: 260px;
+    }
+
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(250, 250, 250, 0.5);
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(250, 250, 250, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--red-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(250, 250, 250, 0.25);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(250, 250, 250, 0.4);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .social-btn:hover {
+      border-color: var(--red);
+      color: var(--red-light);
+    }
+
+    /* ── FLOATING HOTLINE ── */
+    .hotline-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 200;
+      background: var(--red);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.4);
+      animation: pulse 2s infinite;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hotline-float svg {
+      width: 22px;
+      height: 22px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 14px rgba(200, 16, 46, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(200, 16, 46, 0);
+      }
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--dark2);
+      padding: 40px;
+      max-width: 480px;
+      width: 90%;
+      border-top: 3px solid var(--red);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gray);
+      font-size: 20px;
+    }
+
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .modal-sub {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content,
+      .section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 24px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-scroll {
+        left: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Animate on scroll */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="VinFast Logo" class="nav-logo-img">
+      <span class="nav-logo-text">VinFast</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#xe">Xe</a></li>
+      <li><a href="#lido">Vì sao chọn chúng tôi</a></li>
+      <li><a href="#danh-gia">Đánh giá</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ul>
+    <a href="#lien-he" class="nav-cta">Đặt lịch tư vấn</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Đại lý chính hãng VinFast</div>
+      <h1 class="hero-title">Hành Trình<br><span>Của</span><br>Thế Hệ Mới</h1>
+      <p class="hero-sub">Trải nghiệm dòng xe điện thuần túy VinFast — thiết kế táo bạo, công nghệ tiên phong, giá trị
+        Việt Nam vươn tầm thế giới.</p>
+      <div class="hero-actions">
+        <a href="#xe" class="btn-primary">Xem dòng xe</a>
+        <a href="#lien-he" class="btn-ghost">Đặt lịch lái thử</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Khám phá</div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-bar">
+    <div class="stat-item" data-reveal>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Dòng xe hiện có</div>
+    </div>
+    <div class="stat-item" data-reveal>
+      <div class="stat-num">50K+</div>
+      <div class="stat-label">Khách hàng tin tùy</div>
+    </div>
+    <div class="stat-item" data-reveal>
+      <div class="stat-num">5★</div>
+      <div class="stat-label">Dịch vụ khách hàng</div>
+    </div>
+    <div class="stat-item" data-reveal>
+      <div class="stat-num">0đ</div>
+      <div class="stat-label">Phí tư vấn</div>
+    </div>
+  </div>
+
+  <!-- ── XE ── -->
+  <section class="section" id="xe">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Showroom trực tuyến</div>
+      <h2 class="section-title">Toàn Bộ Dòng Xe VinFast</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Bộ lọc danh mục -->
+    <div class="car-filter" data-reveal>
+      <button class="filter-btn active" onclick="filterCars('all', this)">Tất cả</button>
+      <button class="filter-btn" onclick="filterCars('suv', this)">SUV điện</button>
+      <button class="filter-btn" onclick="filterCars('bus', this)">Xe buýt / MPV</button>
+      <button class="filter-btn" onclick="filterCars('van', this)">Xe tải / Van</button>
+    </div>
+
+    <div class="cars-grid" id="carsGrid">
+
+      <!-- VF 3 – BÁN CHẠY -->
+      <div class="car-card" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf3.jpg" alt="VF 3" />
+        <div class="car-badge badge-hot">🔥 Bán chạy nhất</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 3</div>
+          <div class="car-type">SUV điện mini cỡ A</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Eco</span><span class="vprice">302.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus</span><span class="vprice">315.000.000 ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">302.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 3')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF 5 – NỔI BẬT -->
+      <div class="car-card card-highlight" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf5.jpg" alt="VF 5" />
+        <div class="car-badge badge-highlight">⭐ Nổi bật</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 5</div>
+          <div class="car-type">SUV điện cỡ A+</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Plus</span><span class="vprice">529.000.000 ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">529.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 5')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF 6 -->
+      <div class="car-card" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf6.jpg" alt="VF 6" />
+        <div class="car-badge">SUV cỡ B</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 6</div>
+          <div class="car-type">SUV điện cỡ B</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Eco</span><span class="vprice">689.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus</span><span class="vprice">745.000.000 ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">689.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 6')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF MPV 7 -->
+      <div class="car-card" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf-mpv-7.jpg" alt="VF MPV 7" />
+        <div class="car-badge">MPV 7 chỗ</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF MPV 7</div>
+          <div class="car-type">MPV điện 7 chỗ</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn</span><span class="vprice">819.000.000 ₫</span>
+            </div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">819.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF MPV 7')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF 7 -->
+      <div class="car-card" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf7.jpg" alt="VF 7" />
+        <div class="car-badge">SUV cỡ C</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 7</div>
+          <div class="car-type">SUV điện cỡ C</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Eco</span><span class="vprice">789.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus – trần thép</span><span class="vprice">889.000.000
+                ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus – trần kính</span><span class="vprice">909.000.000
+                ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">789.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 7')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF 8 -->
+      <div class="car-card" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf8.jpg" alt="VF 8" />
+        <div class="car-badge">SUV cỡ D</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 8</div>
+          <div class="car-type">SUV điện cỡ D – pin CATL</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Eco</span><span class="vprice">1.019.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus</span><span class="vprice">1.199.000.000 ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">1.019.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 8')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VF 9 – NỔI BẬT -->
+      <div class="car-card card-highlight" data-cat="suv" data-reveal>
+        <img class="car-img" src="images/vf9.jpg" alt="VF 9" />
+        <div class="car-badge badge-highlight">⭐ Nổi bật</div>
+        <div class="car-info">
+          <div class="car-name">VinFast VF 9</div>
+          <div class="car-type">SUV điện cỡ E – 7 chỗ – pin CATL</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Eco</span><span class="vprice">1.499.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Plus – trần thép</span><span class="vprice">1.699.000.000
+                ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">1.499.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('VF 9')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minio Green -->
+      <div class="car-card" data-cat="van" data-reveal>
+        <img class="car-img" src="images/minioGreen.jpg" alt="Minio Green" />
+        <div class="car-badge">Mini EV</div>
+        <div class="car-info">
+          <div class="car-name">Minio Green</div>
+          <div class="car-type">Xe điện mini đô thị</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn</span><span class="vprice">269.000.000 ₫</span>
+            </div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">269.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('Minio Green')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EC Van -->
+      <div class="car-card" data-cat="van" data-reveal>
+        <img class="car-img" src="images/EC van.jpg" alt="EC Van" />
+        <div class="car-badge">Van điện</div>
+        <div class="car-info">
+          <div class="car-name">EC Van</div>
+          <div class="car-type">Xe tải Van điện thương mại</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn</span><span class="vprice">285.000.000 ₫</span>
+            </div>
+            <div class="variant-row"><span class="vname">Nâng cao</span><span class="vprice">305.000.000 ₫</span></div>
+            <div class="variant-row"><span class="vname">Nâng cao + cửa trượt</span><span class="vprice">325.000.000
+                ₫</span></div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">285.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('EC Van')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Herio Green -->
+      <div class="car-card" data-cat="bus" data-reveal>
+        <img class="car-img" src="images/herio.jpg" alt="Herio Green" />
+        <div class="car-badge">Xe buýt mini</div>
+        <div class="car-info">
+          <div class="car-name">Herio Green</div>
+          <div class="car-type">Xe buýt điện mini</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn 1</span><span class="vprice">479.000.000 ₫</span>
+            </div>
+            <div class="variant-row"><span class="vname">Tiêu chuẩn 2</span><span class="vprice">499.000.000 ₫</span>
+            </div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">479.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('Herio Green')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nerio Green -->
+      <div class="car-card" data-cat="bus" data-reveal>
+        <img class="car-img" src="images/nerio.jpg" alt="Nerio Green" />
+        <div class="car-badge">Xe buýt</div>
+        <div class="car-info">
+          <div class="car-name">Nerio Green</div>
+          <div class="car-type">Xe buýt điện cỡ trung</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn</span><span class="vprice">668.000.000 ₫</span>
+            </div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">668.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('Nerio Green')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Limo Green – BÁN CHẠY -->
+      <div class="car-card" data-cat="bus" data-reveal>
+        <img class="car-img" src="images/limo.jpg" alt="Limo Green" />
+        <div class="car-badge badge-hot">🔥 Bán chạy nhất</div>
+        <div class="car-info">
+          <div class="car-name">Limo Green</div>
+          <div class="car-type">Xe buýt điện lớn</div>
+          <div class="car-variants">
+            <div class="variant-row"><span class="vname">Tiêu chuẩn</span><span class="vprice">749.000.000 ₫</span>
+            </div>
+          </div>
+          <div class="car-price">
+            <div>
+              <div class="price-from">Từ</div>
+              <div class="price-val">749.000.000 ₫</div>
+            </div>
+            <button class="car-btn" onclick="openModal('Limo Green')">Quan tâm</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── LÍ DO CHỌN ── -->
+  <section class="section" id="lido">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Cam kết của chúng tôi</div>
+      <h2 class="section-title">Tại Sao Chọn Đại Lý Chúng Tôi?</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
+          </svg>
+        </div>
+        <div class="feature-title">Đại lý chính hãng 100%</div>
+        <div class="feature-desc">Xe nhập khẩu trực tiếp từ nhà máy VinFast, đầy đủ giấy tờ pháp lý, bảo hành chính hãng
+          toàn quốc.</div>
+      </div>
+
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 0v10l6 3" />
+          </svg>
+        </div>
+        <div class="feature-title">Lái thử miễn phí tận nơi</div>
+        <div class="feature-desc">Đăng ký lái thử và chúng tôi sẽ đưa xe đến tận địa chỉ của bạn, không phí phát sinh.
+        </div>
+      </div>
+
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V4m0 16v-4m8-4h-4M4 12H0m15.657-5.657l-2.828 2.828M8.172 15.828l-2.828 2.828M20.485 15.657l-2.828-2.828M8.172 8.172L5.343 5.343" />
+          </svg>
+        </div>
+        <div class="feature-title">Tư vấn chuyên sâu 1:1</div>
+        <div class="feature-desc">Đội ngũ chuyên viên được đào tạo bài bản, tư vấn phù hợp với nhu cầu và ngân sách thực
+          tế.</div>
+      </div>
+
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 10h18M7 15h1m4 0h1m4 0h1M3 6h18a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1z" />
+          </svg>
+        </div>
+        <div class="feature-title">Hỗ trợ tài chính linh hoạt</div>
+        <div class="feature-desc">Kết nối trực tiếp với 10+ ngân hàng, lãi suất ưu đãi, thủ tục nhanh — phê duyệt trong
+          24 giờ.</div>
+      </div>
+
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+          </svg>
+        </div>
+        <div class="feature-title">Bảo dưỡng trọn đời</div>
+        <div class="feature-desc">Gói bảo dưỡng định kỳ, hỗ trợ kỹ thuật 24/7, cứu hộ tận nơi trên toàn quốc.</div>
+      </div>
+
+      <div class="feature-card" data-reveal>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M9 7a4 4 0 110 8 4 4 0 010-8z" />
+          </svg>
+        </div>
+        <div class="feature-title">Cộng đồng chủ xe VinFast</div>
+        <div class="feature-desc">Tham gia cộng đồng 50.000+ chủ xe — chia sẻ kinh nghiệm, nhận ưu đãi độc quyền và sự
+          kiện nội bộ.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ĐÁNH GIÁ ── -->
+  <section class="section" id="danh-gia">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Khách hàng nói gì</div>
+      <h2 class="section-title">Đánh Giá Thực Tế</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card" data-reveal>
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="review-text">Mua VF 8 được 6 tháng, chạy hơn 15.000km chưa gặp vấn đề gì. Tiết kiệm chi phí vận hành
+          rõ rệt so với xe xăng. Nhân viên tư vấn nhiệt tình, hỗ trợ từ A đến Z.</div>
+        <div class="review-author">
+          <div class="review-avatar">TH</div>
+          <div>
+            <div class="review-name">Anh Trần Hoàng</div>
+            <div class="review-loc">Hà Nội · Chủ VF 8</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-reveal>
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <div class="review-text">VF 9 đủ rộng cho gia đình 5 người đi du lịch thoải mái. Gói vay lãi suất ưu đãi của đại
+          lý giúp tôi quyết định nhanh hơn nhiều. Rất hài lòng!</div>
+        <div class="review-author">
+          <div class="review-avatar">ML</div>
+          <div>
+            <div class="review-name">Chị Minh Linh</div>
+            <div class="review-loc">TP.HCM · Chủ VF 9</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card" data-reveal>
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★☆</div>
+        <div class="review-text">Lần đầu mua xe điện khá lo lắng về trạm sạc, nhưng được tư vấn kỹ càng về hệ sinh thái
+          VinFast nên an tâm hơn. VF 6 chạy êm, nội thất sang, giá hợp lý.</div>
+        <div class="review-author">
+          <div class="review-avatar">DQ</div>
+          <div>
+            <div class="review-name">Anh Đức Quang</div>
+            <div class="review-loc">Đà Nẵng · Chủ VF 6</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIÊN HỆ ── -->
+  <section class="section" id="lien-he">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow">Kết nối với chúng tôi</div>
+      <h2 class="section-title">Đặt Lịch Tư Vấn</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info" data-reveal>
+        <h3>Showroom VinFast<br>Đại Lý Chính Hãng</h3>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+          </div>
+          <div class="contact-text">
+            <p>Địa chỉ</p>
+            <span>282 Quốc lộ 32, Xã Đức Thượng, Huyện Hoài Đức, Hà Nội, Hanoi, Vietnam, 10000</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.69A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z" />
+            </svg>
+          </div>
+          <div class="contact-text">
+            <p>Hotline tư vấn</p>
+            <span>0389 160 422</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="contact-text">
+            <p>Giờ làm việc</p>
+            <span>Thứ 2 – Chủ nhật: 8:00 – 24:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Họ và tên</label>
+              <input class="form-input" type="text" placeholder="Nguyễn Văn A" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Số điện thoại</label>
+              <input class="form-input" type="tel" placeholder="090x xxx xxx" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Dòng xe quan tâm</label>
+            <select class="form-select form-input">
+              <option value="">-- Chọn dòng xe --</option>
+              <optgroup label="SUV điện">
+                <option>VinFast VF 3 (từ 302 triệu)</option>
+                <option>VinFast VF 5 (529 triệu)</option>
+                <option>VinFast VF 6 (từ 689 triệu)</option>
+                <option>VinFast VF MPV 7 (819 triệu)</option>
+                <option>VinFast VF 7 (từ 789 triệu)</option>
+                <option>VinFast VF 8 (từ 1,019 tỷ)</option>
+                <option>VinFast VF 9 (từ 1,499 tỷ)</option>
+              </optgroup>
+              <optgroup label="Xe mini / Van">
+                <option>Minio Green (269 triệu)</option>
+                <option>EC Van (từ 285 triệu)</option>
+              </optgroup>
+              <optgroup label="Xe buýt điện">
+                <option>Herio Green (từ 479 triệu)</option>
+                <option>Nerio Green (668 triệu)</option>
+                <option>Limo Green (749 triệu)</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nội dung</label>
+            <textarea class="form-textarea" placeholder="Bạn muốn tư vấn về..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm(this)">Gửi yêu cầu tư vấn →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo"><span>Vin</span>Fast</div>
+        <div class="footer-desc">Đại lý chính hãng VinFast — Cam kết mang đến trải nghiệm mua xe điện trọn vẹn và đáng
+          tin cậy nhất.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Dòng xe</h4>
+        <ul>
+          <li><a href="#">VF 3 – từ 302tr 🔥</a></li>
+          <li><a href="#">VF 5 – 529tr ⭐</a></li>
+          <li><a href="#">VF 6 – từ 689tr</a></li>
+          <li><a href="#">VF MPV 7 – 819tr</a></li>
+          <li><a href="#">VF 7 – từ 789tr</a></li>
+          <li><a href="#">VF 8 – từ 1,019 tỷ</a></li>
+          <li><a href="#">VF 9 – từ 1,499 tỷ ⭐</a></li>
+          <li><a href="#">Minio / EC Van / Herio / Nerio / Limo Green</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Dịch vụ</h4>
+        <ul>
+          <li><a href="#">Lái thử miễn phí</a></li>
+          <li><a href="#">Hỗ trợ tài chính</a></li>
+          <li><a href="#">Bảo dưỡng</a></li>
+          <li><a href="#">Phụ kiện</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Thông tin</h4>
+        <ul>
+          <li><a href="#">Về chúng tôi</a></li>
+          <li><a href="#">Chính sách bảo hành</a></li>
+          <li><a href="#">Trạm sạc</a></li>
+          <li><a href="#">Tin tức</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 VinFast Đại Lý Chính Hãng · Mọi quyền được bảo lưu</div>
+      <div class="footer-social">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">yt</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── FLOATING HOTLINE ── -->
+  <a href="tel:0389160422" class="hotline-float" title="Gọi ngay">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01-.01 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16v.92z" />
+    </svg>
+  </a>
+
+  <!-- ── MODAL ── -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+      <div class="modal-title">Đặt lịch tư vấn</div>
+      <div class="modal-sub" id="modal-sub">Để lại thông tin, chuyên viên sẽ liên hệ trong 30 phút</div>
+      <div class="contact-form" style="margin-top:0">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Họ tên</label>
+            <input class="form-input" type="text" placeholder="Nguyễn Văn A" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Điện thoại</label>
+            <input class="form-input" type="tel" placeholder="090x xxx xxx" />
+          </div>
+        </div>
+        <button class="form-submit" onclick="submitModal(this)">Xác nhận →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Car filter
+    function filterCars(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.car-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Scroll reveal
+    const els = document.querySelectorAll('[data-reveal]');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+
+    // Sticky nav color
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 80
+        ? 'rgba(13,13,13,0.98)'
+        : 'rgba(13,13,13,0.92)';
+    });
+
+    // Modal
+    function openModal(car) {
+      document.getElementById('modal-sub').textContent =
+        'Xe quan tâm: ' + car + ' — Chuyên viên liên hệ trong 30 phút';
+      document.getElementById('modal').classList.add('open');
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'modal') document.getElementById('modal').classList.remove('open');
+    }
+
+    function submitModal(btn) {
+      btn.textContent = '✔ Đã ghi nhận — Cảm ơn bạn!';
+      btn.style.background = '#1a7a4a';
+      setTimeout(() => document.getElementById('modal').classList.remove('open'), 1800);
+    }
+
+    function submitForm(btn) {
+      btn.textContent = '✔ Đã gửi thành công — Chúng tôi sẽ liên hệ sớm!';
+      btn.style.background = '#1a7a4a';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+
+</html>
